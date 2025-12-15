@@ -56,7 +56,8 @@ class TeacherDashboardActivity : AppCompatActivity() {
 
     private fun setupClickListeners() {
         attendanceCard.setOnClickListener {
-            Toast.makeText(this, "Attendance feature - Mark student attendance", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, MarkAttendanceActivity::class.java)
+            startActivity(intent)
         }
 
         homeworkCard.setOnClickListener {

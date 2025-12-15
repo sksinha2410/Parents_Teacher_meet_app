@@ -41,6 +41,11 @@
             android:name=".activities.TeacherDashboardActivity"
             android:exported="false" />
         
+        <activity
+            android:name=".activities.MarkAttendanceActivity"
+            android:exported="false"
+            android:parentActivityName=".activities.TeacherDashboardActivity" />
+        
         <!-- Firebase Cloud Messaging Service -->
         <service
             android:name=".services.K12MessagingService"
