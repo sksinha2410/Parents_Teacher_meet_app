@@ -46,6 +46,11 @@
             android:exported="false"
             android:parentActivityName=".activities.TeacherDashboardActivity" />
         
+        <activity
+            android:name=".activities.AddDummyDataActivity"
+            android:exported="false"
+            android:parentActivityName=".activities.TeacherDashboardActivity" />
+        
         <!-- Firebase Cloud Messaging Service -->
         <service
             android:name=".services.K12MessagingService"

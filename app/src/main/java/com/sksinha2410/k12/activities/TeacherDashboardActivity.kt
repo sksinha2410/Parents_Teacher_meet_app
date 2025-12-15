@@ -21,6 +21,7 @@ class TeacherDashboardActivity : AppCompatActivity() {
     private lateinit var noticesCard: CardView
     private lateinit var examsCard: CardView
     private lateinit var messagesCard: CardView
+    private lateinit var dummyDataCard: CardView
     private lateinit var logoutCard: CardView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,6 +37,7 @@ class TeacherDashboardActivity : AppCompatActivity() {
         noticesCard = findViewById(R.id.noticesCard)
         examsCard = findViewById(R.id.examsCard)
         messagesCard = findViewById(R.id.messagesCard)
+        dummyDataCard = findViewById(R.id.dummyDataCard)
         logoutCard = findViewById(R.id.logoutCard)
 
         loadUserData()
@@ -74,6 +76,11 @@ class TeacherDashboardActivity : AppCompatActivity() {
 
         messagesCard.setOnClickListener {
             Toast.makeText(this, "Messages feature - Chat with parents", Toast.LENGTH_SHORT).show()
+        }
+
+        dummyDataCard.setOnClickListener {
+            val intent = Intent(this, AddDummyDataActivity::class.java)
+            startActivity(intent)
         }
 
         logoutCard.setOnClickListener {
