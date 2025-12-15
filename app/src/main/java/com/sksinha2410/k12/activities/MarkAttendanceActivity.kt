@@ -185,6 +185,7 @@ class MarkAttendanceActivity : AppCompatActivity() {
         val lateRadio: RadioButton = itemView.findViewById(R.id.lateRadio)
         val halfDayRadio: RadioButton = itemView.findViewById(R.id.halfDayRadio)
         val remarksEditText: TextInputEditText = itemView.findViewById(R.id.remarksEditText)
+        var textWatcher: android.text.TextWatcher? = null
     }
 
     // Adapter for student attendance list
@@ -210,6 +211,20 @@ class MarkAttendanceActivity : AppCompatActivity() {
                 attendanceData[position] = AttendanceData(AttendanceStatus.PRESENT, "")
             }
 
+            // Restore previous state
+            val currentData = attendanceData[position]!!
+            
+            // Set the correct radio button based on saved status
+            when (currentData.status) {
+                AttendanceStatus.PRESENT -> holder.presentRadio.isChecked = true
+                AttendanceStatus.ABSENT -> holder.absentRadio.isChecked = true
+                AttendanceStatus.LATE -> holder.lateRadio.isChecked = true
+                AttendanceStatus.HALF_DAY -> holder.halfDayRadio.isChecked = true
+            }
+            
+            // Restore remarks text
+            holder.remarksEditText.setText(currentData.remarks)
+
             // Set listener for radio group changes
             holder.attendanceRadioGroup.setOnCheckedChangeListener { _, checkedId ->
                 val status = when (checkedId) {
@@ -222,12 +237,18 @@ class MarkAttendanceActivity : AppCompatActivity() {
                 attendanceData[position]?.status = status
             }
 
-            // Set listener for remarks text changes
-            holder.remarksEditText.setOnFocusChangeListener { _, hasFocus ->
-                if (!hasFocus) {
-                    attendanceData[position]?.remarks = holder.remarksEditText.text.toString()
+            // Remove previous TextWatcher if exists
+            holder.textWatcher?.let { holder.remarksEditText.removeTextChangedListener(it) }
+            
+            // Create and add new TextWatcher
+            holder.textWatcher = object : android.text.TextWatcher {
+                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+                override fun afterTextChanged(s: android.text.Editable?) {
+                    attendanceData[position]?.remarks = s.toString()
                 }
             }
+            holder.remarksEditText.addTextChangedListener(holder.textWatcher)
         }
 
         override fun getItemCount(): Int = students.size
