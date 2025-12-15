@@ -69,7 +69,7 @@ data class Student(
     val studentId: String,
     val name: String,
     val className: String,
-    val rollNumber: String,
+    val rollNumber: Int,
     val parentId: String,
     val dateOfBirth: String
 )
