@@ -88,6 +88,8 @@ class FirestoreRepository {
 
     suspend fun getNotices(className: String = ""): Result<List<Notice>> {
         return try {
+            // Note: For better performance with large datasets, consider creating a composite index
+            // on (targetAudience, createdAt) in Firestore Console
             val query = if (className.isEmpty()) {
                 firestore.collection("notices")
                     .whereEqualTo("targetAudience", "ALL")
