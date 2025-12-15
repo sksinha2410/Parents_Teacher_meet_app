@@ -1,5 +1,22 @@
 # Dummy Students for Testing - Documentation
 
+## Important: Recent Fix Applied
+
+**Issue Fixed**: "Added 0 students, 25 failed" error
+
+**Root Cause**: The `rollNumber` field was incorrectly defined as a String, which caused:
+1. Improper ordering (lexicographic "1", "10", "2" instead of numeric 1, 2, 10)
+2. Missing Firestore composite index requirement
+
+**Solution Applied**:
+1. Changed `rollNumber` from String to Int in the Student model
+2. Updated all dummy student data to use integer roll numbers
+3. Added Firestore composite index configuration (see [FIRESTORE_INDEX_GUIDE.md](FIRESTORE_INDEX_GUIDE.md))
+
+**Action Required**: You must create the Firestore composite index for the students collection. Follow the instructions in [FIRESTORE_INDEX_GUIDE.md](FIRESTORE_INDEX_GUIDE.md).
+
+---
+
 ## Overview
 This document describes the dummy students feature added to the K12 Parent-Teacher Communication App for testing purposes.
 
@@ -94,10 +111,12 @@ Added a new card to the Teacher Dashboard with:
 
 ### Important Notes:
 - This feature requires Firebase Firestore to be configured
+- **IMPORTANT**: You must create a Firestore composite index for students collection. See [FIRESTORE_INDEX_GUIDE.md](FIRESTORE_INDEX_GUIDE.md) for instructions.
 - Make sure you have internet connection
 - The students are added with empty `parentId` field (can be linked to parents later if needed)
 - The feature can be run multiple times, but it will create duplicate students
 - This is intended for **testing and development only**
+- The `rollNumber` field is now an integer (Int) type for proper numeric ordering
 
 ## Files Modified/Created
 

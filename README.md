@@ -555,7 +555,7 @@ data class Student(
     val studentId: String = "",
     val name: String = "",
     val className: String = "",
-    val rollNumber: String = "",
+    val rollNumber: Int = 0,
     val parentId: String = "",
     val dateOfBirth: String = "",
     val createdAt: Long = System.currentTimeMillis()
