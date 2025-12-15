@@ -231,4 +231,18 @@ class FirestoreRepository {
             Result.failure(e)
         }
     }
+
+    suspend fun getStudentsByClass(className: String): Result<List<Student>> {
+        return try {
+            val snapshot = firestore.collection("students")
+                .whereEqualTo("className", className)
+                .orderBy("rollNumber")
+                .get()
+                .await()
+            val studentList = snapshot.toObjects(Student::class.java)
+            Result.success(studentList)
+        } catch (e: Exception) {
+            Result.failure(e)
+        }
+    }
 }

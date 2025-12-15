@@ -40,4 +40,16 @@
     <string name="post_notice">Post Notice</string>
     <string name="manage_exams">Manage Exams</string>
     <string name="chat_with_parents">Chat with Parents</string>
+    
+    <!-- Attendance -->
+    <string name="present">Present</string>
+    <string name="absent">Absent</string>
+    <string name="late">Late</string>
+    <string name="half_day">Half Day</string>
+    <string name="remarks_optional">Remarks (Optional)</string>
+    <string name="submit_attendance">Submit Attendance</string>
+    <string name="attendance_submitted">Attendance submitted successfully</string>
+    <string name="error_loading_students">Error loading students</string>
+    <string name="error_submitting_attendance">Error submitting attendance</string>
+    <string name="no_students_found">No students found in your class</string>
 </resources>
