@@ -46,18 +46,21 @@ class AddDummyDataActivity : AppCompatActivity() {
             var successCount = 0
             var failureCount = 0
 
-            // Add students in parallel for better performance
-            val results = dummyStudents.map { student ->
-                async {
-                    firestoreRepository.addStudent(student)
-                }
-            }.awaitAll()
+            // Add students in batches to avoid overwhelming Firestore
+            val batchSize = 5
+            dummyStudents.chunked(batchSize).forEach { batch ->
+                val results = batch.map { student ->
+                    async {
+                        firestoreRepository.addStudent(student)
+                    }
+                }.awaitAll()
 
-            results.forEach { result ->
-                if (result.isSuccess) {
-                    successCount++
-                } else {
-                    failureCount++
+                results.forEach { result ->
+                    if (result.isSuccess) {
+                        successCount++
+                    } else {
+                        failureCount++
+                    }
                 }
             }
 
