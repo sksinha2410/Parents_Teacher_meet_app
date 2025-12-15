@@ -1,3 +1,43 @@
 <resources>
-    <string name="app_name">K12</string>
+    <string name="app_name">K12 - Parent Teacher Connect</string>
+    
+    <!-- Login Screen -->
+    <string name="login_title">Login</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="login_button">Login</string>
+    <string name="register_button">Register</string>
+    <string name="dont_have_account">Don\'t have an account?</string>
+    
+    <!-- Registration Screen -->
+    <string name="registration_title">Register</string>
+    <string name="name_hint">Full Name</string>
+    <string name="phone_hint">Phone Number</string>
+    <string name="confirm_password_hint">Confirm Password</string>
+    <string name="select_role">Select Role</string>
+    
+    <!-- Dashboard -->
+    <string name="welcome">Welcome</string>
+    <string name="attendance">Attendance</string>
+    <string name="homework">Homework</string>
+    <string name="notices">Notices</string>
+    <string name="exams">Exams</string>
+    <string name="fees">Fees</string>
+    <string name="messages">Messages</string>
+    <string name="logout">Logout</string>
+    
+    <!-- Parent Dashboard -->
+    <string name="view_attendance">View Attendance</string>
+    <string name="view_homework">View Homework</string>
+    <string name="view_notices">View Notices</string>
+    <string name="view_exams">View Exam Schedule</string>
+    <string name="view_fees">View Fees</string>
+    <string name="chat_with_teachers">Chat with Teachers</string>
+    
+    <!-- Teacher Dashboard -->
+    <string name="mark_attendance">Mark Attendance</string>
+    <string name="assign_homework">Assign Homework</string>
+    <string name="post_notice">Post Notice</string>
+    <string name="manage_exams">Manage Exams</string>
+    <string name="chat_with_parents">Chat with Parents</string>
 </resources>
