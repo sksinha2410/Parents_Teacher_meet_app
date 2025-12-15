@@ -11,6 +11,8 @@ import androidx.lifecycle.lifecycleScope
 import com.sksinha2410.k12.R
 import com.sksinha2410.k12.models.Student
 import com.sksinha2410.k12.repository.FirestoreRepository
+import kotlinx.coroutines.async
+import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.launch
 
 class AddDummyDataActivity : AppCompatActivity() {
@@ -44,8 +46,14 @@ class AddDummyDataActivity : AppCompatActivity() {
             var successCount = 0
             var failureCount = 0
 
-            for (student in dummyStudents) {
-                val result = firestoreRepository.addStudent(student)
+            // Add students in parallel for better performance
+            val results = dummyStudents.map { student ->
+                async {
+                    firestoreRepository.addStudent(student)
+                }
+            }.awaitAll()
+
+            results.forEach { result ->
                 if (result.isSuccess) {
                     successCount++
                 } else {
