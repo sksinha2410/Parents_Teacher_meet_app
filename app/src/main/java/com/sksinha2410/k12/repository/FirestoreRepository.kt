@@ -204,6 +204,17 @@ class FirestoreRepository {
     }
 
     // Students
+    suspend fun addStudent(student: Student): Result<String> {
+        return try {
+            val docRef = firestore.collection("students").document()
+            val studentWithId = student.copy(studentId = docRef.id)
+            docRef.set(studentWithId).await()
+            Result.success(docRef.id)
+        } catch (e: Exception) {
+            Result.failure(e)
+        }
+    }
+
     suspend fun getStudent(studentId: String): Result<Student> {
         return try {
             val document = firestore.collection("students")
