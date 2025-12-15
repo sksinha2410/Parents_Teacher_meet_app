@@ -92,35 +92,35 @@ class AddDummyDataActivity : AppCompatActivity() {
         students.add(Student(
             name = "Aarav Kumar",
             className = "Class 1",
-            rollNumber = "1",
+            rollNumber = 1,
             parentId = "",
             dateOfBirth = "2018-05-15"
         ))
         students.add(Student(
             name = "Diya Sharma",
             className = "Class 1",
-            rollNumber = "2",
+            rollNumber = 2,
             parentId = "",
             dateOfBirth = "2018-07-22"
         ))
         students.add(Student(
             name = "Arjun Patel",
             className = "Class 1",
-            rollNumber = "3",
+            rollNumber = 3,
             parentId = "",
             dateOfBirth = "2018-09-10"
         ))
         students.add(Student(
             name = "Ananya Singh",
             className = "Class 1",
-            rollNumber = "4",
+            rollNumber = 4,
             parentId = "",
             dateOfBirth = "2018-03-28"
         ))
         students.add(Student(
             name = "Vihaan Reddy",
             className = "Class 1",
-            rollNumber = "5",
+            rollNumber = 5,
             parentId = "",
             dateOfBirth = "2018-11-05"
         ))
@@ -129,35 +129,35 @@ class AddDummyDataActivity : AppCompatActivity() {
         students.add(Student(
             name = "Saanvi Gupta",
             className = "Class 2",
-            rollNumber = "1",
+            rollNumber = 1,
             parentId = "",
             dateOfBirth = "2017-04-12"
         ))
         students.add(Student(
             name = "Aditya Verma",
             className = "Class 2",
-            rollNumber = "2",
+            rollNumber = 2,
             parentId = "",
             dateOfBirth = "2017-08-19"
         ))
         students.add(Student(
             name = "Isha Joshi",
             className = "Class 2",
-            rollNumber = "3",
+            rollNumber = 3,
             parentId = "",
             dateOfBirth = "2017-01-25"
         ))
         students.add(Student(
             name = "Reyansh Mehta",
             className = "Class 2",
-            rollNumber = "4",
+            rollNumber = 4,
             parentId = "",
             dateOfBirth = "2017-06-30"
         ))
         students.add(Student(
             name = "Myra Kapoor",
             className = "Class 2",
-            rollNumber = "5",
+            rollNumber = 5,
             parentId = "",
             dateOfBirth = "2017-12-08"
         ))
@@ -166,35 +166,35 @@ class AddDummyDataActivity : AppCompatActivity() {
         students.add(Student(
             name = "Kabir Malhotra",
             className = "Class 3",
-            rollNumber = "1",
+            rollNumber = 1,
             parentId = "",
             dateOfBirth = "2016-02-14"
         ))
         students.add(Student(
             name = "Navya Agarwal",
             className = "Class 3",
-            rollNumber = "2",
+            rollNumber = 2,
             parentId = "",
             dateOfBirth = "2016-09-21"
         ))
         students.add(Student(
             name = "Dhruv Sinha",
             className = "Class 3",
-            rollNumber = "3",
+            rollNumber = 3,
             parentId = "",
             dateOfBirth = "2016-05-07"
         ))
         students.add(Student(
             name = "Avni Desai",
             className = "Class 3",
-            rollNumber = "4",
+            rollNumber = 4,
             parentId = "",
             dateOfBirth = "2016-10-18"
         ))
         students.add(Student(
             name = "Vivaan Nair",
             className = "Class 3",
-            rollNumber = "5",
+            rollNumber = 5,
             parentId = "",
             dateOfBirth = "2016-03-03"
         ))
@@ -203,35 +203,35 @@ class AddDummyDataActivity : AppCompatActivity() {
         students.add(Student(
             name = "Aanya Pandey",
             className = "Class 4",
-            rollNumber = "1",
+            rollNumber = 1,
             parentId = "",
             dateOfBirth = "2015-07-11"
         ))
         students.add(Student(
             name = "Ishaan Rao",
             className = "Class 4",
-            rollNumber = "2",
+            rollNumber = 2,
             parentId = "",
             dateOfBirth = "2015-11-29"
         ))
         students.add(Student(
             name = "Kiara Bose",
             className = "Class 4",
-            rollNumber = "3",
+            rollNumber = 3,
             parentId = "",
             dateOfBirth = "2015-04-16"
         ))
         students.add(Student(
             name = "Rohan Chauhan",
             className = "Class 4",
-            rollNumber = "4",
+            rollNumber = 4,
             parentId = "",
             dateOfBirth = "2015-08-23"
         ))
         students.add(Student(
             name = "Sara Das",
             className = "Class 4",
-            rollNumber = "5",
+            rollNumber = 5,
             parentId = "",
             dateOfBirth = "2015-12-31"
         ))
@@ -240,35 +240,35 @@ class AddDummyDataActivity : AppCompatActivity() {
         students.add(Student(
             name = "Advait Roy",
             className = "Class 5",
-            rollNumber = "1",
+            rollNumber = 1,
             parentId = "",
             dateOfBirth = "2014-01-09"
         ))
         students.add(Student(
             name = "Pihu Shah",
             className = "Class 5",
-            rollNumber = "2",
+            rollNumber = 2,
             parentId = "",
             dateOfBirth = "2014-06-26"
         ))
         students.add(Student(
             name = "Ayaan Banerjee",
             className = "Class 5",
-            rollNumber = "3",
+            rollNumber = 3,
             parentId = "",
             dateOfBirth = "2014-10-14"
         ))
         students.add(Student(
             name = "Riya Iyer",
             className = "Class 5",
-            rollNumber = "4",
+            rollNumber = 4,
             parentId = "",
             dateOfBirth = "2014-03-20"
         ))
         students.add(Student(
             name = "Arnav Pillai",
             className = "Class 5",
-            rollNumber = "5",
+            rollNumber = 5,
             parentId = "",
             dateOfBirth = "2014-09-05"
         ))
