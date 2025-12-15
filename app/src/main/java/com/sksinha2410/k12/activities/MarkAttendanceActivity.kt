@@ -127,7 +127,9 @@ class MarkAttendanceActivity : AppCompatActivity() {
         progressBar.visibility = View.VISIBLE
         submitButton.isEnabled = false
 
-        val currentDate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date())
+        val currentDate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).apply {
+            timeZone = TimeZone.getDefault()
+        }.format(Date())
 
         lifecycleScope.launch {
             var successCount = 0
@@ -212,7 +214,7 @@ class MarkAttendanceActivity : AppCompatActivity() {
             }
 
             // Restore previous state
-            val currentData = attendanceData[position]!!
+            val currentData = attendanceData[position] ?: AttendanceData(AttendanceStatus.PRESENT, "")
             
             // Set the correct radio button based on saved status
             when (currentData.status) {
@@ -234,7 +236,8 @@ class MarkAttendanceActivity : AppCompatActivity() {
                     R.id.halfDayRadio -> AttendanceStatus.HALF_DAY
                     else -> AttendanceStatus.PRESENT
                 }
-                attendanceData[position]?.status = status
+                attendanceData[position] = attendanceData[position]?.copy(status = status) 
+                    ?: AttendanceData(status, "")
             }
 
             // Remove previous TextWatcher if exists
@@ -245,7 +248,8 @@ class MarkAttendanceActivity : AppCompatActivity() {
                 override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
                 override fun afterTextChanged(s: android.text.Editable?) {
-                    attendanceData[position]?.remarks = s.toString()
+                    attendanceData[position] = attendanceData[position]?.copy(remarks = s.toString()) 
+                        ?: AttendanceData(AttendanceStatus.PRESENT, s.toString())
                 }
             }
             holder.remarksEditText.addTextChangedListener(holder.textWatcher)
